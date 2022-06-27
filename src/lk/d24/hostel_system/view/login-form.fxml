@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loginContext" prefHeight="400.0" prefWidth="650.0" style="-fx-background-color: linear-gradient(to right top, #a2d2ff, #c1ceff, #dccaf8, #f1c8ec, #ffc8dd);;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.d24.hostel_system.controller.LoginFormController">
+   <children>
+      <JFXTextField fx:id="txtUsername" alignment="CENTER" layoutX="175.0" layoutY="133.0" prefWidth="300.0" promptText="Username" style="-fx-text-fill: #1d3557; -fx-prompt-text-fill: #1d3557;" unFocusColor="#1d3557">
+         <font>
+            <Font name="Ubuntu" size="20.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="txtPassword" alignment="CENTER" layoutX="175.0" layoutY="215.0" prefHeight="26.0" prefWidth="300.0" promptText="Password" style="-fx-prompt-text-fill: #1d3557; -fx-text-fill: #1d3557;" unFocusColor="#1d3557">
+         <font>
+            <Font name="Ubuntu" size="20.0" />
+         </font>
+      </JFXPasswordField>
+      <Label alignment="CENTER" layoutX="223.0" layoutY="50.0" text="User Login" textFill="#1d3557">
+         <font>
+            <Font name="Ubuntu Bold" size="40.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="271.0" layoutY="296.0" onAction="#btnLoginOnAction" prefHeight="48.0" prefWidth="108.0" style="-fx-background-color: #1d3557; -fx-background-radius: 20;" text="Login" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="Ubuntu" size="20.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

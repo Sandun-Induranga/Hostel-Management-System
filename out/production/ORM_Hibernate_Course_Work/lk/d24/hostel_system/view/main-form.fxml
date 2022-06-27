@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="650.0" prefWidth="1080.0" style="-fx-background-color: #FBF5F2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.d24.hostel_system.controller.MainFormController">
+   <children>
+      <ImageView fitHeight="650.0" fitWidth="1117.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@asserts/main-image.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgStudent" fitHeight="120.0" fitWidth="120.0" layoutX="387.0" layoutY="212.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="212.0">
+         <image>
+            <Image url="@asserts/student.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="imgRoom" fitHeight="120.0" fitWidth="120.0" layoutX="560.0" layoutY="212.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="212.0">
+         <image>
+            <Image url="@asserts/room.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="imgSettings" fitHeight="120.0" fitWidth="120.0" layoutX="778.0" layoutY="204.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="80.0" AnchorPane.topAnchor="212.0">
+         <image>
+            <Image url="@asserts/settings.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label fx:id="lblMenu" alignment="CENTER" layoutX="509.0" layoutY="449.0" prefHeight="48.0" prefWidth="535.0" text="Welcome" textFill="#00ad8a">
+         <font>
+            <Font name="Ubuntu Bold" size="40.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="839.0" layoutY="617.0" prefHeight="33.0" prefWidth="229.0" style="-fx-background-color: #FBF5F2;" AnchorPane.rightAnchor="12.0">
+         <children>
+            <ImageView fitHeight="14.0" fitWidth="149.0" layoutX="115.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@asserts/version-image.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="imgReservation" fitHeight="120.0" fitWidth="120.0" layoutX="724.0" layoutY="212.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="212.0">
+         <image>
+            <Image url="@asserts/money.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>

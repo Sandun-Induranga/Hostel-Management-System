@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.d24.hostel_system.controller.UserSettingsFormController">
+   <children>
+      <ImageView fitHeight="650.0" fitWidth="1080.0" pickOnBounds="true">
+         <image>
+            <Image url="@asserts/background-image.jpg" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txtUsername" layoutX="390.0" layoutY="126.0" prefWidth="300.0" promptText="Username" style="-fx-prompt-text-fill: #001219; -fx-text-fill: #001219;" unFocusColor="#001219">
+         <font>
+            <Font name="Ubuntu" size="20.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="txtPassword" layoutX="390.0" layoutY="219.0" prefHeight="26.0" prefWidth="300.0" promptText="Password" style="-fx-prompt-text-fill: #001219; -fx-text-fill: #001219;" unFocusColor="#001219">
+         <font>
+            <Font name="Ubuntu" size="20.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXPasswordField fx:id="txtConfirm" layoutX="390.0" layoutY="306.0" prefHeight="26.0" prefWidth="300.0" promptText="Confirm Password" style="-fx-prompt-text-fill: #001219; -fx-text-fill: #001219;" unFocusColor="#001219">
+         <font>
+            <Font name="Ubuntu" size="20.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXButton buttonType="RAISED" layoutX="484.0" layoutY="397.0" onAction="#btnUpdateOnAction" style="-fx-background-color: #001219;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="Ubuntu" size="24.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

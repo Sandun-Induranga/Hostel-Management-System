@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.d24.hostel_system.controller.ManageRoomsFormController">
+   <children>
+      <ImageView fitHeight="650.0" fitWidth="1080.0" layoutX="-1.0" layoutY="1.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@asserts/background-image.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblRoom" layoutX="140.0" layoutY="281.0" prefHeight="274.0" prefWidth="800.0">
+        <columns>
+          <TableColumn prefWidth="187.0" text="Room Id" />
+          <TableColumn prefWidth="234.0" text="Room Type" />
+            <TableColumn prefWidth="201.0" text="Key Money" />
+            <TableColumn prefWidth="177.0" text="Quantity" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="txtRoomId" layoutX="132.0" layoutY="76.0" onKeyReleased="#textFieldsKeyReleasedOnAction" prefWidth="200.0" promptText="Room Id" style="-fx-prompt-text-fill: #001219;" unFocusColor="#001219" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="92.0">
+         <font>
+            <Font name="Ubuntu" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtType" layoutX="326.0" layoutY="92.0" onKeyReleased="#textFieldsKeyReleasedOnAction" prefWidth="200.0" promptText="Room Type" style="-fx-prompt-text-fill: #001219;" unFocusColor="#001219" AnchorPane.topAnchor="92.0">
+         <font>
+            <Font name="Ubuntu" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtKeyMoney" layoutX="561.0" layoutY="92.0" onKeyReleased="#textFieldsKeyReleasedOnAction" prefWidth="200.0" promptText="Key Money" style="-fx-prompt-text-fill: #001219;" unFocusColor="#001219" AnchorPane.topAnchor="92.0">
+         <font>
+            <Font name="Ubuntu" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtQty" layoutX="840.0" layoutY="76.0" onKeyReleased="#textFieldsKeyReleasedOnAction" prefWidth="200.0" promptText="Quantity" style="-fx-prompt-text-fill: #001219;" unFocusColor="#001219" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="92.0">
+         <font>
+            <Font name="Ubuntu" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton buttonType="RAISED" layoutX="869.0" layoutY="33.0" onAction="#btnAddNewOnAction" style="-fx-background-color: #ff006e;" text="Add New Room" textFill="WHITE">
+         <font>
+            <Font name="Ubuntu" size="20.0" />
+         </font></JFXButton>
+      <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="928.0" layoutY="188.0" onAction="#btnDeleteOnAction" prefWidth="96.0" style="-fx-background-color: #f07167;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Ubuntu" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="801.0" layoutY="188.0" onAction="#btnSaveOnAction" prefWidth="96.0" style="-fx-background-color: #0081a7;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="Ubuntu" size="20.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

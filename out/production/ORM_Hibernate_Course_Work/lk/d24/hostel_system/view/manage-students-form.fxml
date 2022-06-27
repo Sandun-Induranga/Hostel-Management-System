@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1080.0" style="-fx-background-color: linear-gradient(to right top, #3c096c, #531b87, #6b2ca3, #843dc0, #9d4edd);;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.d24.hostel_system.controller.ManageStudentsFormController">
+   <children>
+      <ImageView fitHeight="650.0" fitWidth="1080.0" pickOnBounds="true">
+         <image>
+            <Image url="@asserts/background-image.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblStudent" layoutX="90.0" layoutY="263.0" prefHeight="300.0" prefWidth="905.0" AnchorPane.bottomAnchor="80.0">
+        <columns>
+          <TableColumn prefWidth="117.0" text="Student Id" />
+          <TableColumn prefWidth="190.0" text="Name" />
+            <TableColumn prefWidth="204.0" text="Address" />
+            <TableColumn prefWidth="161.0" text="Phone Number" />
+            <TableColumn prefWidth="123.0" text="DOB" />
+            <TableColumn prefWidth="105.0" text="Gender" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="txtStudentId" layoutX="90.0" layoutY="93.0" onKeyReleased="#textFieldsKeyReleasedOnAction" prefWidth="200.0" promptText="NIC" style="-fx-prompt-text-fill: #001219; -fx-text-fill: #001219;" unFocusColor="#001219" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="92.0">
+         <font>
+            <Font name="Ubuntu" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtName" layoutX="322.0" layoutY="93.0" onKeyReleased="#textFieldsKeyReleasedOnAction" prefWidth="200.0" promptText="Name" style="-fx-prompt-text-fill: #001219; -fx-text-fill: #001219;" unFocusColor="#001219" AnchorPane.topAnchor="92.0">
+         <font>
+            <Font name="Ubuntu" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtAddress" layoutX="555.0" layoutY="93.0" onKeyReleased="#textFieldsKeyReleasedOnAction" prefWidth="200.0" promptText="Address" style="-fx-prompt-text-fill: #001219; -fx-text-fill: #001219;" unFocusColor="#001219" AnchorPane.topAnchor="92.0">
+         <font>
+            <Font name="Ubuntu" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtTel" layoutX="790.0" layoutY="93.0" onKeyReleased="#textFieldsKeyReleasedOnAction" prefWidth="200.0" promptText="Phone Number" style="-fx-prompt-text-fill: #001219; -fx-text-fill: #001219;" unFocusColor="#001219" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="92.0">
+         <font>
+            <Font name="Ubuntu" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnAddNew" buttonType="RAISED" layoutX="858.0" layoutY="34.0" onAction="#btnAddNewOnAction" style="-fx-background-color: #ff006e;" text="Add New Student" textFill="WHITE" AnchorPane.topAnchor="34.0">
+         <font>
+            <Font name="Ubuntu" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="773.0" layoutY="192.0" onAction="#btnSaveOnAction" prefHeight="38.0" prefWidth="96.0" style="-fx-background-color: #0081a7;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="Ubuntu" size="20.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="txtDob" layoutX="173.0" layoutY="161.0" onKeyReleased="#textFieldsKeyReleasedOnAction" prefWidth="200.0" promptText="Date Of Birth" style="-fx-prompt-text-fill: #001219; -fx-text-fill: #001219;" unFocusColor="#001219">
+         <font>
+            <Font name="Ubuntu" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtGender" layoutX="406.0" layoutY="161.0" onKeyReleased="#textFieldsKeyReleasedOnAction" prefWidth="200.0" promptText="Gender" style="-fx-prompt-text-fill: #001219; -fx-text-fill: #001219;" unFocusColor="#001219">
+         <font>
+            <Font name="Ubuntu" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="904.0" layoutY="192.0" onAction="#btnDeleteOnAction" prefWidth="96.0" style="-fx-background-color: #f07167;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Ubuntu" size="20.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="40.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="28.0">
+         <image>
+            <Image url="@asserts/home.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow color="#4d4d4d" />
+         </effect>
+      </ImageView>
+   </children>
+</AnchorPane>

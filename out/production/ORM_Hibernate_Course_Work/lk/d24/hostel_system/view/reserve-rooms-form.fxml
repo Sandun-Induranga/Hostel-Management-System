@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="651.0" prefWidth="1309.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.d24.hostel_system.controller.ReserveRoomsFormController">
+   <children>
+      <ImageView fitHeight="651.0" fitWidth="1309.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@asserts/background-image.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblReservation" layoutX="99.0" layoutY="370.0" prefHeight="249.0" prefWidth="1024.0">
+        <columns>
+          <TableColumn prefWidth="123.0" text="Reservation Id" />
+          <TableColumn prefWidth="101.0" text="Student Id" />
+            <TableColumn prefWidth="197.0" text="Student Name" />
+            <TableColumn prefWidth="95.0" text="Room Id" />
+            <TableColumn prefWidth="128.0" text="Room Type" />
+            <TableColumn prefWidth="87.0" text="Date" />
+            <TableColumn prefWidth="108.0" text="Key Money" />
+            <TableColumn prefWidth="184.0" text="Key Money Status" />
+        </columns>
+      </TableView>
+      <JFXComboBox fx:id="cmbStudentId" layoutX="41.0" layoutY="140.0" prefWidth="200.0" promptText="Student Id" style="-fx-font-size: 16; -fx-font-fill: #001219; -fx-font-family: ubuntu; -fx-prompt-text-fill: #001219;" unFocusColor="#001219">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXComboBox>
+      <JFXComboBox fx:id="cmbRoomId" layoutX="41.0" layoutY="226.0" prefWidth="200.0" promptText="Room Id" style="-fx-font-size: 16; -fx-font-fill: #001219; -fx-font-family: ubuntu; -fx-prompt-text-fill: #001219;" unFocusColor="#001219">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXComboBox>
+      <JFXTextField fx:id="txtName" layoutX="304.0" layoutY="140.0" prefWidth="200.0" promptText="Student Name" style="-fx-prompt-text-fill: #001219; -fx-text-fill: #001219;">
+         <font>
+            <Font name="Ubuntu" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtAddress" layoutX="541.0" layoutY="140.0" prefWidth="200.0" promptText="Address" style="-fx-prompt-text-fill: #001219; -fx-text-fill: #001219;">
+         <font>
+            <Font name="Ubuntu" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtPhoneNumber" layoutX="792.0" layoutY="140.0" prefWidth="200.0" promptText="Phone Number" style="-fx-prompt-text-fill: #001219; -fx-text-fill: #001219;">
+         <font>
+            <Font name="Ubuntu" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtType" layoutX="304.0" layoutY="226.0" prefWidth="200.0" promptText="Room Type" style="-fx-prompt-text-fill: #001219; -fx-text-fill: #001219;">
+         <font>
+            <Font name="Ubuntu" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtKeyMoney" layoutX="541.0" layoutY="226.0" prefWidth="200.0" promptText="Key Money" style="-fx-prompt-text-fill: #001219; -fx-text-fill: #001219;">
+         <font>
+            <Font name="Ubuntu" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtQty" layoutX="792.0" layoutY="226.0" prefWidth="200.0" promptText="Quantity" style="-fx-prompt-text-fill: #001219; -fx-text-fill: #001219;">
+         <font>
+            <Font name="Ubuntu" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton buttonType="RAISED" layoutX="1083.0" layoutY="223.0" onAction="#btnReserveOnAction" style="-fx-background-color: #001219;" text="Reserve" textFill="WHITE">
+         <font>
+            <Font name="Ubuntu" size="20.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="lblResId" layoutX="943.0" layoutY="84.0">
+         <font>
+            <Font name="Ubuntu" size="20.0" />
+         </font></Label>
+      <JFXComboBox fx:id="cmbPayment" layoutX="1033.0" layoutY="140.0" prefWidth="200.0" promptText="Payment Status" style="-fx-font-size: 16; -fx-font-fill: #001219; -fx-font-family: ubuntu; -fx-prompt-text-fill: #001219;" unFocusColor="#001219">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXComboBox>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="41.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@asserts/home.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblResId1" layoutX="792.0" layoutY="84.0" text="Reservation Id : ">
+         <font>
+            <Font name="Ubuntu" size="20.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbFilter" layoutX="241.0" layoutY="310.0" prefHeight="31.0" prefWidth="101.0" promptText="All" style="-fx-font-size: 16; -fx-font-fill: #001219; -fx-font-family: ubuntu; -fx-prompt-text-fill: #001219;" unFocusColor="#001219">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXComboBox>
+   </children>
+</AnchorPane>
