@@ -8,6 +8,7 @@ import lk.d24.hostel_system.dao.custom.ReservationDAO;
 import lk.d24.hostel_system.dao.custom.RoomDAO;
 import lk.d24.hostel_system.dao.custom.StudentDAO;
 import lk.d24.hostel_system.dto.CustomDTO;
+import lk.d24.hostel_system.dto.ReservationDTO;
 import lk.d24.hostel_system.dto.RoomDTO;
 import lk.d24.hostel_system.dto.StudentDTO;
 import lk.d24.hostel_system.entity.CustomEntity;
@@ -70,6 +71,13 @@ public class ReserveRoomBOImpl implements ReserveRoomBO, SuperBO {
     }
 
     @Override
+    public boolean updateReservation(String reservationId, String studentId, String roomId, String paymentStatus) throws Exception {
+        Student student = studentDAO.find(studentId);
+        Room room = roomDAO.find(roomId);
+        return reservationDAO.update(new Reservation(reservationId, LocalDate.now(), room.getKeyMoney(), paymentStatus, student, room));
+    }
+
+    @Override
     public String generateNewReservationId() throws Exception {
         return reservationDAO.generateNewId();
     }
@@ -82,6 +90,11 @@ public class ReserveRoomBOImpl implements ReserveRoomBO, SuperBO {
     @Override
     public List<CustomDTO> getPaidReservations() throws Exception {
         return getData(queryDAO.getPaidReservations());
+    }
+
+    @Override
+    public List<CustomDTO> getPendingReservations() throws Exception {
+        return getData(queryDAO.getPendingReservations());
     }
 
     private List<CustomDTO> getData(List<CustomEntity> allReservations){

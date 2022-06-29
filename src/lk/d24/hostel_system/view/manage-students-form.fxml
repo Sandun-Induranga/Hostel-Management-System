@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="650.0" prefWidth="1080.0" style="-fx-background-color: linear-gradient(to right top, #3c096c, #531b87, #6b2ca3, #843dc0, #9d4edd);;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.d24.hostel_system.controller.ManageStudentsFormController">
+<AnchorPane fx:id="context" prefHeight="650.0" prefWidth="1080.0" style="-fx-background-color: linear-gradient(to right top, #3c096c, #531b87, #6b2ca3, #843dc0, #9d4edd);;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.d24.hostel_system.controller.ManageStudentsFormController">
    <children>
       <ImageView fitHeight="650.0" fitWidth="1080.0" pickOnBounds="true">
          <image>
@@ -73,7 +73,7 @@
             <Font name="Ubuntu" size="20.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="40.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="28.0">
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="40.0" layoutY="28.0" onMouseClicked="#btnHomeOnAction" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="28.0">
          <image>
             <Image url="@asserts/home.png" />
          </image>

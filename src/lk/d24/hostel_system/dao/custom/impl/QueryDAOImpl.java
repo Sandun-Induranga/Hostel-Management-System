@@ -24,6 +24,11 @@ public class QueryDAOImpl implements QueryDAO {
         return getData("SELECT r.resId, r.student_studentId, s.name, r.room_roomId, Room.type, r.date, r.keyMoney, r.keyMoneyStatus FROM Reservation r JOIN Room JOIN Student s ON r.room_roomId = Room.roomId && r.student_studentId=s.studentId WHERE r.keyMoneyStatus='Paid'");
     }
 
+    @Override
+    public List<CustomEntity> getPendingReservations() throws Exception {
+        return getData("SELECT r.resId, r.student_studentId, s.name, r.room_roomId, Room.type, r.date, r.keyMoney, r.keyMoneyStatus FROM Reservation r JOIN Room JOIN Student s ON r.room_roomId = Room.roomId && r.student_studentId=s.studentId WHERE r.keyMoneyStatus='Pending'");
+    }
+
     private List<CustomEntity> getData(String query){
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();

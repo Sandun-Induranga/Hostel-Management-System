@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="651.0" prefWidth="1309.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.d24.hostel_system.controller.ReserveRoomsFormController">
+<AnchorPane fx:id="context" onMouseClicked="#btnHomeOnAction" prefHeight="651.0" prefWidth="1309.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.d24.hostel_system.controller.ReserveRoomsFormController">
    <children>
       <ImageView fitHeight="651.0" fitWidth="1309.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
@@ -71,12 +71,12 @@
             <Font name="Ubuntu" size="16.0" />
          </font>
       </JFXTextField>
-      <JFXButton buttonType="RAISED" layoutX="1083.0" layoutY="223.0" onAction="#btnReserveOnAction" style="-fx-background-color: #001219;" text="Reserve" textFill="WHITE">
+      <JFXButton fx:id="btnReserve" buttonType="RAISED" layoutX="1083.0" layoutY="223.0" onAction="#btnReserveOnAction" style="-fx-background-color: #001219;" text="Reserve" textFill="WHITE">
          <font>
             <Font name="Ubuntu" size="20.0" />
          </font>
       </JFXButton>
-      <Label fx:id="lblResId" layoutX="943.0" layoutY="84.0">
+      <Label fx:id="lblResId" layoutX="1131.0" layoutY="43.0">
          <font>
             <Font name="Ubuntu" size="20.0" />
          </font></Label>
@@ -90,7 +90,7 @@
             <Image url="@asserts/home.png" />
          </image>
       </ImageView>
-      <Label fx:id="lblResId1" layoutX="792.0" layoutY="84.0" text="Reservation Id : ">
+      <Label fx:id="lblResId1" layoutX="980.0" layoutY="43.0" text="Reservation Id : ">
          <font>
             <Font name="Ubuntu" size="20.0" />
          </font>

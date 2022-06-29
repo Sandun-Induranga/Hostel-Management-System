@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="650.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.d24.hostel_system.controller.UserSettingsFormController">
+<AnchorPane fx:id="context" prefHeight="650.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.d24.hostel_system.controller.UserSettingsFormController">
    <children>
       <ImageView fitHeight="650.0" fitWidth="1080.0" pickOnBounds="true">
          <image>
@@ -35,5 +35,10 @@
             <Font name="Ubuntu" size="24.0" />
          </font>
       </JFXButton>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="37.0" layoutY="21.0" onMouseClicked="#btnHomeOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@asserts/home.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

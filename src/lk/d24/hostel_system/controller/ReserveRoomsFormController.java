@@ -1,19 +1,28 @@
 package lk.d24.hostel_system.controller;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import lk.d24.hostel_system.bo.BOFactory;
 import lk.d24.hostel_system.bo.custom.ReserveRoomBO;
 import lk.d24.hostel_system.dto.CustomDTO;
+import lk.d24.hostel_system.dto.ReservationDTO;
 import lk.d24.hostel_system.dto.RoomDTO;
 import lk.d24.hostel_system.dto.StudentDTO;
 import lk.d24.hostel_system.view.tdm.ReservationTM;
 
+import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +40,8 @@ public class ReserveRoomsFormController {
     public TableView<ReservationTM> tblReservation;
     private final ReserveRoomBO reserveRoomBO = (ReserveRoomBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.RESERVATION);
     public JFXComboBox<String> cmbFilter;
+    public AnchorPane context;
+    public JFXButton btnReserve;
 
 
     public void initialize() {
@@ -56,6 +67,15 @@ public class ReserveRoomsFormController {
         cmbRoomId.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             getSelectedRoom();
         });
+        tblReservation.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                lblResId.setText(newValue.getResId());
+                cmbStudentId.setValue(newValue.getStudentId());
+                cmbRoomId.setValue(newValue.getRoomId());
+                cmbPayment.setValue(newValue.getKeyMoneyStatus());
+                btnReserve.setText("Update");
+            }
+        });
         try {
             lblResId.setText(reserveRoomBO.generateNewReservationId());
         } catch (Exception e) {
@@ -65,6 +85,7 @@ public class ReserveRoomsFormController {
     }
 
     private void loadAllReservations() {
+        tblReservation.getItems().clear();
         switch (cmbFilter.getValue()) {
             case "All":
                 try {
@@ -77,6 +98,14 @@ public class ReserveRoomsFormController {
             case "Paid":
                 try {
                     List<CustomDTO> allReservations = reserveRoomBO.getPaidReservations();
+                    setTableData(allReservations);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
+            default:
+                try {
+                    List<CustomDTO> allReservations = reserveRoomBO.getPendingReservations();
                     setTableData(allReservations);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -141,13 +170,29 @@ public class ReserveRoomsFormController {
     }
 
     public void btnReserveOnAction(ActionEvent actionEvent) {
-        try {
-            reserveRoomBO.reserveRoom(lblResId.getText(), cmbStudentId.getValue(), cmbRoomId.getValue(), cmbPayment.getValue());
-            loadAllReservations();
-            new Alert(Alert.AlertType.INFORMATION, "Saved.!").show();
-        } catch (Exception e) {
-            new Alert(Alert.AlertType.ERROR, "Something Went Wrong.!");
-            e.printStackTrace();
+        if (btnReserve.getText().equalsIgnoreCase("Reserve")){
+            try {
+                reserveRoomBO.reserveRoom(lblResId.getText(), cmbStudentId.getValue(), cmbRoomId.getValue(), cmbPayment.getValue());
+                new Alert(Alert.AlertType.INFORMATION, "Saved.!").show();
+            } catch (Exception e) {
+                new Alert(Alert.AlertType.ERROR, "Something Went Wrong.!");
+                e.printStackTrace();
+            }
+        }else {
+            try {
+                reserveRoomBO.updateReservation(lblResId.getText(), cmbStudentId.getValue(), cmbRoomId.getValue(), cmbPayment.getValue());
+                new Alert(Alert.AlertType.INFORMATION, "Updated.!").show();
+            } catch (Exception e) {
+                new Alert(Alert.AlertType.ERROR, "Something Went Wrong.!");
+                e.printStackTrace();
+            }
         }
+        loadAllReservations();
+    }
+
+    public void btnHomeOnAction(MouseEvent mouseEvent) throws IOException {
+        context.getChildren().clear();
+        Stage stage = (Stage) context.getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/lk/d24/hostel_system/view/main-form.fxml"))));
     }
 }

@@ -2,18 +2,27 @@ package lk.d24.hostel_system.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import lk.d24.hostel_system.bo.BOFactory;
 import lk.d24.hostel_system.bo.custom.StudentBO;
 import lk.d24.hostel_system.dto.StudentDTO;
 import lk.d24.hostel_system.util.ValidationUtil;
 import lk.d24.hostel_system.view.tdm.StudentTM;
 
+import java.io.IOException;
+import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -33,6 +42,7 @@ public class ManageStudentsFormController {
     public JFXButton btnDelete;
     private final StudentBO studentBO = (StudentBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.STUDENT);
     private final LinkedHashMap<JFXTextField, Pattern> map = ValidationUtil.getPatternMap();
+    public AnchorPane context;
 
     public void initialize() {
         tblStudent.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("studentId"));
@@ -197,5 +207,11 @@ public class ManageStudentsFormController {
         btnSave.setDisable(true);
         btnSave.setText("Save");
         btnDelete.setDisable(true);
+    }
+
+    public void btnHomeOnAction(MouseEvent mouseEvent) throws IOException {
+        context.getChildren().clear();
+        Stage stage = (Stage) context.getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/lk/d24/hostel_system/view/main-form.fxml"))));
     }
 }

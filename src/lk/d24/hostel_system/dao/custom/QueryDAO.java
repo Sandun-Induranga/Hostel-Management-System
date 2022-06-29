@@ -9,4 +9,6 @@ public interface QueryDAO extends SuperDAO {
     public List<CustomEntity> getAllReservations() throws Exception;
 
     public List<CustomEntity> getPaidReservations() throws Exception;
+
+    public List<CustomEntity> getPendingReservations() throws Exception;
 }

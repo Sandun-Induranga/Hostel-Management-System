@@ -3,17 +3,23 @@ package lk.d24.hostel_system.controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import lk.d24.hostel_system.bo.BOFactory;
 import lk.d24.hostel_system.bo.custom.RoomBO;
 import lk.d24.hostel_system.dto.RoomDTO;
 import lk.d24.hostel_system.util.ValidationUtil;
 import lk.d24.hostel_system.view.tdm.RoomTM;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -30,6 +36,7 @@ public class ManageRoomsFormController {
     public JFXButton btnDelete;
     private final RoomBO roomBO = (RoomBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.ROOM);
     private final LinkedHashMap<JFXTextField, Pattern> map = ValidationUtil.getPatternMap();
+    public AnchorPane context;
 
     public void initialize() {
         tblRoom.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("roomId"));
@@ -170,5 +177,10 @@ public class ManageRoomsFormController {
             new Alert(Alert.AlertType.ERROR, "Something Went Wrong.!").show();
         }
         loadAllRooms();
+    }
+    public void btnHomeOnAction(MouseEvent mouseEvent) throws IOException {
+        context.getChildren().clear();
+        Stage stage = (Stage) context.getScene().getWindow();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/lk/d24/hostel_system/view/main-form.fxml"))));
     }
 }
