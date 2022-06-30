@@ -1,5 +1,6 @@
 package lk.d24.hostel_system.controller;
 
+import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.application.Platform;
@@ -8,6 +9,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.d24.hostel_system.bo.BOFactory;
@@ -22,6 +25,8 @@ public class LoginFormController {
     public JFXPasswordField txtPassword;
     private final UserBO userBO = (UserBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.USER);
     public AnchorPane loginContext;
+    public JFXCheckBox chkShow;
+    public Label lblShow;
 
     public void btnLoginOnAction(ActionEvent actionEvent) throws IOException {
         UserDTO user = null;
@@ -40,6 +45,18 @@ public class LoginFormController {
             Platform.runLater(() -> primaryStage.sizeToScene());
         } else {
             new Alert(Alert.AlertType.ERROR, "Please Enter Correct Login Details").show();
+        }
+    }
+
+    public void chkShowOnAction(ActionEvent actionEvent) {
+        if (chkShow.isSelected()){
+            lblShow.setText(txtPassword.getText());
+        }
+    }
+
+    public void txtPasswordKeyReleasedOnAction(KeyEvent keyEvent) {
+        if (chkShow.isSelected()){
+            lblShow.setText(txtPassword.getText());
         }
     }
 }

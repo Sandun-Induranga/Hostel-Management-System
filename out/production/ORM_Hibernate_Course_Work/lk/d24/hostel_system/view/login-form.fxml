@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
@@ -15,7 +16,7 @@
             <Font name="Ubuntu" size="20.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField fx:id="txtPassword" alignment="CENTER" layoutX="175.0" layoutY="215.0" prefHeight="26.0" prefWidth="300.0" promptText="Password" style="-fx-prompt-text-fill: #1d3557; -fx-text-fill: #1d3557;" unFocusColor="#1d3557">
+      <JFXPasswordField fx:id="txtPassword" alignment="CENTER" layoutX="175.0" layoutY="215.0" onKeyReleased="#txtPasswordKeyReleasedOnAction" prefHeight="26.0" prefWidth="300.0" promptText="Password" style="-fx-prompt-text-fill: #1d3557; -fx-text-fill: #1d3557;" unFocusColor="#1d3557">
          <font>
             <Font name="Ubuntu" size="20.0" />
          </font>
@@ -33,5 +34,11 @@
             <Font name="Ubuntu" size="20.0" />
          </font>
       </JFXButton>
+      <Label fx:id="lblShow" alignment="CENTER" layoutX="175.0" layoutY="191.0" prefHeight="16.0" prefWidth="300.0" text="Label">
+         <font>
+            <Font name="Ubuntu" size="20.0" />
+         </font>
+      </Label>
+      <JFXCheckBox fx:id="chkShow" layoutX="484.0" layoutY="225.0" onAction="#chkShowOnAction" text="Show" />
    </children>
 </AnchorPane>

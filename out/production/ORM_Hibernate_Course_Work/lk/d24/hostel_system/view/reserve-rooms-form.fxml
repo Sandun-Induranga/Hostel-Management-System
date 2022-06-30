@@ -95,7 +95,7 @@
             <Font name="Ubuntu" size="20.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="cmbFilter" layoutX="241.0" layoutY="310.0" prefHeight="31.0" prefWidth="101.0" promptText="All" style="-fx-font-size: 16; -fx-font-fill: #001219; -fx-font-family: ubuntu; -fx-prompt-text-fill: #001219;" unFocusColor="#001219">
+      <JFXComboBox fx:id="cmbFilter" layoutX="541.0" layoutY="326.0" prefHeight="31.0" prefWidth="101.0" promptText="All" style="-fx-font-size: 16; -fx-font-fill: #001219; -fx-font-family: ubuntu; -fx-prompt-text-fill: #001219;" unFocusColor="#001219">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
