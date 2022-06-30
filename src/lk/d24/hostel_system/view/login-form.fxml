@@ -34,7 +34,7 @@
             <Font name="Ubuntu" size="20.0" />
          </font>
       </JFXButton>
-      <Label fx:id="lblShow" alignment="CENTER" layoutX="175.0" layoutY="191.0" prefHeight="16.0" prefWidth="300.0" text="Label">
+      <Label fx:id="lblShow" alignment="CENTER" layoutX="175.0" layoutY="191.0" prefHeight="16.0" prefWidth="300.0">
          <font>
             <Font name="Ubuntu" size="20.0" />
          </font>

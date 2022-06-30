@@ -51,6 +51,8 @@ public class LoginFormController {
     public void chkShowOnAction(ActionEvent actionEvent) {
         if (chkShow.isSelected()){
             lblShow.setText(txtPassword.getText());
+        }else {
+            lblShow.setText("");
         }
     }
 
