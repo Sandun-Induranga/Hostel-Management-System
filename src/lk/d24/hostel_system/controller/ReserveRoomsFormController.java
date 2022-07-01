@@ -170,12 +170,16 @@ public class ReserveRoomsFormController {
     }
 
     public void btnReserveOnAction(ActionEvent actionEvent) {
+        if (cmbPayment.getValue()==null) {
+            new Alert(Alert.AlertType.WARNING, "All Fields Required.!").show();
+            return;
+        }
         if (btnReserve.getText().equalsIgnoreCase("Reserve")){
             try {
                 reserveRoomBO.reserveRoom(lblResId.getText(), cmbStudentId.getValue(), cmbRoomId.getValue(), cmbPayment.getValue());
                 new Alert(Alert.AlertType.INFORMATION, "Saved.!").show();
             } catch (Exception e) {
-                new Alert(Alert.AlertType.ERROR, "Something Went Wrong.!");
+                new Alert(Alert.AlertType.ERROR, "Something Went Wrong.!").show();
                 e.printStackTrace();
             }
         }else {
@@ -183,7 +187,7 @@ public class ReserveRoomsFormController {
                 reserveRoomBO.updateReservation(lblResId.getText(), cmbStudentId.getValue(), cmbRoomId.getValue(), cmbPayment.getValue());
                 new Alert(Alert.AlertType.INFORMATION, "Updated.!").show();
             } catch (Exception e) {
-                new Alert(Alert.AlertType.ERROR, "Something Went Wrong.!");
+                new Alert(Alert.AlertType.ERROR, "Something Went Wrong.!").show();
                 e.printStackTrace();
             }
         }

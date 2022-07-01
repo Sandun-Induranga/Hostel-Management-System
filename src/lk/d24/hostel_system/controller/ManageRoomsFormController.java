@@ -66,8 +66,8 @@ public class ManageRoomsFormController {
     }
 
     private void setValidationPatterns() {
-        Pattern idPattern = Pattern.compile("^(R)[0-9]{3}$");
-        Pattern typePattern = Pattern.compile("^[A-z0-9 ,/]{3,20}$");
+        Pattern idPattern = Pattern.compile("^(RM-)[0-9]{4}$");
+        Pattern typePattern = Pattern.compile("^[A-z0-9 ,-/]{3,20}$");
         Pattern keyMoneyPattern = Pattern.compile("^[1-9][0-9]*(.[0-9]{2})?$");
         Pattern qtyPattern = Pattern.compile("^[0-9]{1,}$");
 
