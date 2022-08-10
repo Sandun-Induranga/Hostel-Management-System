@@ -1,6 +1,14 @@
 # Hostel-Management-System
 Hibernate Coursework
 
+Using Technologies
+      Java
+      JavaFX
+      Hibernate
+      Jfoniex library
+      Fontawesome Library
+      java Mysql connerctor
+
 ![Screenshot from 2022-07-07 11-39-09](https://user-images.githubusercontent.com/88975401/177703963-d145e47a-e2cd-4662-9e06-8eae5114f208.png)
 
 ![Screenshot from 2022-07-07 11-39-37](https://user-images.githubusercontent.com/88975401/177703972-fc4360cd-6730-4def-b70d-1e3f958a3faf.png)
