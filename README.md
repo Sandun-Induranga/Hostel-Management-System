@@ -1,5 +1,5 @@
-# Hostel-Management-System
-Hibernate Coursework
+# Hostel Management System
+**Hibernate Coursework**
 
 Using Technologies
       Java
